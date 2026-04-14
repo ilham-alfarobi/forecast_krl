@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
-from pages.utils import load_evaluasi, load_forecast_test, load_cv, load_historis, COLORS
+from pages.utils import load_evaluasi, load_forecast_test, load_cv, load_historis, COLORS, hex_to_rgba
 
 def show():
     st.title("📊 Dashboard Perbandingan Model")
@@ -112,7 +112,7 @@ def show():
                     x=pd.concat([df_test["tanggal"], df_test["tanggal"][::-1]]),
                     y=pd.concat([df_test[col_hi], df_test[col_lo][::-1]]),
                     fill="toself",
-                    fillcolor=COLORS[m] + "22",
+                    fillcolor=hex_to_rgba(COLORS[m], 0.12),
                     line=dict(color="rgba(0,0,0,0)"),
                     name=f"{m} 95% CI",
                     showlegend=True,
