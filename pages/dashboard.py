@@ -125,8 +125,9 @@ def show():
                 line=dict(color=COLORS[m], width=2),
             ))
 
+        tanggal_batas = pd.to_datetime("2025-11-13").timestamp() * 1000
         fig.add_vline(
-            x="2025-11-13", line_dash="dash",
+            x="tanggal_batas", line_dash="dash",
             line_color="gray", opacity=0.6,
             annotation_text="Mulai Periode Test",
         )
