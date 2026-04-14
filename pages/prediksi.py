@@ -7,7 +7,7 @@ from io import BytesIO
 from datetime import date, timedelta
 from pages.utils import (
     load_evaluasi, load_forecast_30, load_historis,
-    COLORS, LIBUR_NASIONAL, label_hari,
+    COLORS, LIBUR_NASIONAL, label_hari, hex_to_rgba,
 )
 
 HARI_INDO = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"]
@@ -238,7 +238,7 @@ def show():
             x=pd.concat([df_fc["tanggal"], df_fc["tanggal"][::-1]]),
             y=pd.concat([df_fc["ci_upper"], df_fc["ci_lower"][::-1]]),
             fill="toself",
-            fillcolor=COLORS[model_name] + "28",
+            fillcolor=hex_to_rgba(COLORS[model_name], 0.12),
             line=dict(color="rgba(0,0,0,0)"),
             name="95% CI",
         ))
