@@ -34,6 +34,18 @@ COLORS = {
     "aktual":  "#111827",
 }
 
+def hex_to_rgba(hex_color: str, alpha: float = 0.15) -> str:
+    """
+    Konversi hex color ke format rgba yang diterima Plotly.
+    Plotly TIDAK menerima format '#rrggbbaa' (hex+opacity suffix).
+    Harus menggunakan 'rgba(r,g,b,a)'.
+
+    Contoh: hex_to_rgba("#2563EB", 0.15) → "rgba(37,99,235,0.15)"
+    """
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
 @st.cache_data
 def load_evaluasi():
     path = os.path.join(DATA_DIR, "evaluasi.json")
