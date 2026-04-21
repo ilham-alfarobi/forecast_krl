@@ -264,10 +264,11 @@ def show():
             name="Hari Libur",
             marker=dict(symbol="star", size=14, color="#D97706"),
         ))
-
+    # mengganti str()    
+    tanggal_prediksi = pd.Timestamp(start_date).timestamp() * 1000
     if show_hist:
         fig.add_vline(
-            x=str(pd.Timestamp(start_date)),
+            x=tanggal_prediksi,
             line_dash="dash", line_color="gray", opacity=0.6,
             annotation_text="Mulai Prediksi",
         )
