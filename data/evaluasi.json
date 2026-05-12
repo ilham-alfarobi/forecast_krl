@@ -5,7 +5,7 @@
       "RMSE": 6040,
       "MAPE": 15.88,
       "SMAPE": 18.16,
-      "Coverage": 81.2,
+      "Coverage": 78.7,
       "CV_MAPE": 18.75,
       "order": "fourier_order=3, cps=0.05, hps=30",
       "type": "Additive Decomposition"
@@ -21,12 +21,12 @@
       "type": "Statistical Time Series"
     },
     "Hybrid": {
-      "MAE": 4545,
-      "RMSE": 6252,
-      "MAPE": 16.72,
-      "SMAPE": 19.45,
-      "Coverage": 95.0,
-      "CV_MAPE": 7.5,
+      "MAE": 2739,
+      "RMSE": 4283,
+      "MAPE": 9.66,
+      "SMAPE": 10.41,
+      "Coverage": 97.5,
+      "CV_MAPE": 6.95,
       "order": "Prophet(L1) + SARIMAX(residual_clipped)(L2)",
       "type": "Sequential Decomposition"
     }
@@ -41,91 +41,91 @@
     },
     {
       "pair": "Prophet vs Hybrid",
-      "stat": -0.247,
-      "pval": 0.8055,
-      "sig": false,
-      "better": "Prophet"
+      "stat": 5.9279,
+      "pval": 0.0,
+      "sig": true,
+      "better": "Hybrid"
     },
     {
       "pair": "SARIMAX vs Hybrid",
-      "stat": -6.7014,
-      "pval": 0.0,
-      "sig": true,
-      "better": "SARIMAX"
+      "stat": 0.514,
+      "pval": 0.6082,
+      "sig": false,
+      "better": "Hybrid"
     }
   ],
   "mape_per_hari": {
     "Senin": {
       "Prophet": 16.3,
       "SARIMAX": 10.74,
-      "Hybrid": 22.57
+      "Hybrid": 11.0
     },
     "Selasa": {
       "Prophet": 18.53,
       "SARIMAX": 12.24,
-      "Hybrid": 25.53
+      "Hybrid": 12.6
     },
     "Rabu": {
       "Prophet": 17.31,
       "SARIMAX": 10.75,
-      "Hybrid": 21.7
+      "Hybrid": 11.31
     },
     "Kamis": {
       "Prophet": 12.26,
       "SARIMAX": 7.19,
-      "Hybrid": 17.96
+      "Hybrid": 7.1
     },
     "Jumat": {
       "Prophet": 15.0,
       "SARIMAX": 11.22,
-      "Hybrid": 13.8
+      "Hybrid": 10.82
     },
     "Sabtu": {
       "Prophet": 16.9,
       "SARIMAX": 7.95,
-      "Hybrid": 9.25
+      "Hybrid": 7.86
     },
     "Minggu": {
       "Prophet": 15.14,
       "SARIMAX": 8.4,
-      "Hybrid": 7.11
+      "Hybrid": 8.04
     }
   },
   "cv_per_horizon": {
     "1": {
       "Prophet": 13.8,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "2": {
       "Prophet": 14.2,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "3": {
       "Prophet": 15.3,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "4": {
       "Prophet": 14.9,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "5": {
       "Prophet": 16.2,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "6": {
       "Prophet": 29.7,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     },
     "7": {
       "Prophet": 27.8,
       "SARIMAX": 7.5,
-      "Hybrid": 7.5
+      "Hybrid": 7.0
     }
   }
 }
