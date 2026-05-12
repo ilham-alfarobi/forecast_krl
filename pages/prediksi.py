@@ -122,7 +122,7 @@ def show():
     st.title("🔮 Prediksi Volume Penumpang")
     st.markdown(
         "Prediksi berbasis hasil pipeline penelitian. "
-        "SARIMAX adalah model terbaik dengan **MAPE 9.75%** dan **Coverage 97.5%**."
+        "Hybrid adalah model terbaik dengan **MAPE 9.66%** dan **Coverage 97.5%**."
     )
 
     # ── Konfigurasi di sidebar ─────────────────────────────────
@@ -132,7 +132,7 @@ def show():
 
         model_pilih = st.selectbox(
             "Pilih Model",
-            ["SARIMAX (Terbaik ★)", "Prophet", "Hybrid"],
+            ["SARIMAX ", "Prophet", "Hybrid (Terbaik)"],
             index=0,
             key="model_fc",
         )
@@ -208,12 +208,12 @@ def show():
     rel_label, rel_desc = rel_info[horizon]
     st.info(f"**Reliabilitas prediksi {horizon} hari:** {rel_label} — {rel_desc}")
 
-    if model_name == "SARIMAX":
-        st.success("🏆 **SARIMAX** — Model terbaik penelitian. MAPE 9.75% | Coverage 97.5% | CV MAPE 7.54%")
+    if model_name == "Hybrid":
+        st.success("🏆 **Hybrid** — Model terbaik penelitian. MAPE 9.66% | Coverage 97.5% | CV MAPE 6.95%")
     elif model_name == "Prophet":
         st.info("📊 **Prophet** — MAPE 15.88%. Lebih baik digunakan untuk komunikasi komponen ke stakeholder non-teknis.")
     else:
-        st.warning("🔄 **Hybrid** — MAPE test 16.72% | CV MAPE 7.50%. Performa CV hampir setara SARIMAX tapi tidak lebih baik di data test.")
+        st.warning("🔄 **SARIMAX** — MAPE test 9.75% | CV MAPE 7.54%. Performa CV hampir setara Hybrid.")
 
     # ── Plot prediksi ──────────────────────────────────────────
     st.subheader("Plot Prediksi")

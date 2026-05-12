@@ -36,7 +36,7 @@ def show():
     cols = st.columns(3)
     for idx_model, model in enumerate(["Prophet", "SARIMAX", "Hybrid"]):
         with cols[idx_model]:
-            is_best = model == "SARIMAX"
+            is_best = model == "Hybrid"
             badge   = "🏆 **Model Terbaik**" if is_best else f"*{ev[model]['type']}*"
             st.markdown(f"### {model}")
             st.caption(badge)
@@ -76,7 +76,7 @@ def show():
         model_pilih = st.multiselect(
             "Tampilkan model:",
             ["Prophet", "SARIMAX", "Hybrid"],
-            default=["SARIMAX"],
+            default=["Hybrid"],
             key="model_test_multi",
         )
         tampil_ci = st.checkbox("Tampilkan 95% Confidence Interval", value=True)

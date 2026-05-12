@@ -24,8 +24,8 @@ with st.sidebar:
     st.caption(
         "**Sumber Data:** PT KCI\n\n"
         "**Periode:** Jan 2025 – Jan 2026\n\n"
-        "**Model Terbaik:** SARIMAX\n"
-        "MAPE: 9.75% | Coverage: 97.5%\n\n"
+        "**Model Terbaik:** Hybrid\n"
+        "MAPE: 9.66% | Coverage: 97.5%\n\n"
         "**Metodologi:** CRISP-DM"
     )
 
