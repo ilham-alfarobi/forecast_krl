@@ -26,7 +26,7 @@ evaluasi = {
     "Prophet": {
         "MAE": 4492, "RMSE": 6040,
         "MAPE": 15.88, "SMAPE": 18.16,
-        "Coverage": 81.2, "CV_MAPE": 18.75,
+        "Coverage": 78.7, "CV_MAPE": 18.75,
         "order": "fourier_order=3, cps=0.05, hps=30",
         "type": "Additive Decomposition"
     },
@@ -38,9 +38,9 @@ evaluasi = {
         "type": "Statistical Time Series"
     },
     "Hybrid": {
-        "MAE": 4545, "RMSE": 6252,
-        "MAPE": 16.72, "SMAPE": 19.45,
-        "Coverage": 95.0, "CV_MAPE": 7.50,
+        "MAE": 2739, "RMSE": 4283,
+        "MAPE": 9.66, "SMAPE": 10.41,
+        "Coverage": 97.5, "CV_MAPE": 6.95,
         "order": "Prophet(L1) + SARIMAX(residual_clipped)(L2)",
         "type": "Sequential Decomposition"
     }
@@ -48,28 +48,28 @@ evaluasi = {
 
 dm_test = [
     {"pair": "Prophet vs SARIMAX", "stat": 6.5462,  "pval": 0.0000, "sig": True,  "better": "SARIMAX"},
-    {"pair": "Prophet vs Hybrid",  "stat": -0.2470, "pval": 0.8055, "sig": False, "better": "Prophet"},
-    {"pair": "SARIMAX vs Hybrid",  "stat": -6.7014, "pval": 0.0000, "sig": True,  "better": "SARIMAX"},
+    {"pair": "Prophet vs Hybrid",  "stat": 5.9279, "pval": 0.0000, "sig": True, "better": "Hybrid"},
+    {"pair": "SARIMAX vs Hybrid",  "stat": 0.514, "pval": 0.6082, "sig": False,  "better": "Hybrid"},
 ]
 
 mape_per_hari = {
-    "Senin":  {"Prophet": 16.30, "SARIMAX": 10.74, "Hybrid": 22.57},
-    "Selasa": {"Prophet": 18.53, "SARIMAX": 12.24, "Hybrid": 25.53},
-    "Rabu":   {"Prophet": 17.31, "SARIMAX": 10.75, "Hybrid": 21.70},
-    "Kamis":  {"Prophet": 12.26, "SARIMAX":  7.19, "Hybrid": 17.96},
-    "Jumat":  {"Prophet": 15.00, "SARIMAX": 11.22, "Hybrid": 13.80},
-    "Sabtu":  {"Prophet": 16.90, "SARIMAX":  7.95, "Hybrid":  9.25},
-    "Minggu": {"Prophet": 15.14, "SARIMAX":  8.40, "Hybrid":  7.11},
+    "Senin":  {"Prophet": 16.30, "SARIMAX": 10.74, "Hybrid": 11.00},
+    "Selasa": {"Prophet": 18.53, "SARIMAX": 12.24, "Hybrid": 12.60},
+    "Rabu":   {"Prophet": 17.31, "SARIMAX": 10.75, "Hybrid": 11.31},
+    "Kamis":  {"Prophet": 12.26, "SARIMAX":  7.19, "Hybrid": 7.10},
+    "Jumat":  {"Prophet": 15.00, "SARIMAX": 11.22, "Hybrid": 10.82},
+    "Sabtu":  {"Prophet": 16.90, "SARIMAX":  7.95, "Hybrid":  7.86},
+    "Minggu": {"Prophet": 15.14, "SARIMAX":  8.40, "Hybrid":  8.04},
 }
 
 cv_per_horizon = {
-    1: {"Prophet": 13.8,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    2: {"Prophet": 14.2,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    3: {"Prophet": 15.3,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    4: {"Prophet": 14.9,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    5: {"Prophet": 16.2,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    6: {"Prophet": 29.7,  "SARIMAX": 7.5, "Hybrid": 7.5},
-    7: {"Prophet": 27.8,  "SARIMAX": 7.5, "Hybrid": 7.5},
+    1: {"Prophet": 13.8,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    2: {"Prophet": 14.2,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    3: {"Prophet": 15.3,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    4: {"Prophet": 14.9,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    5: {"Prophet": 16.2,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    6: {"Prophet": 29.7,  "SARIMAX": 7.5, "Hybrid": 7.0},
+    7: {"Prophet": 27.8,  "SARIMAX": 7.5, "Hybrid": 7.0},
 }
 
 with open("data/evaluasi.json", "w") as f:
